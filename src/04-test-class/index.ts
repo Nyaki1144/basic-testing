@@ -22,7 +22,6 @@ export class BankAccount {
       throw new InsufficientFundsError(this._balance);
     }
     this._balance -= amount;
-
     return this;
   }
 
@@ -39,7 +38,6 @@ export class BankAccount {
 
   public async fetchBalance(): Promise<number | null> {
     const balance = random(0, 100, false);
-
     const requestFailed = random(0, 1, false) === 0;
 
     return requestFailed ? null : balance;
